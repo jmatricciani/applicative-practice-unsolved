@@ -7,6 +7,9 @@ import { data } from "../data/data";
 
 export function lowMoonsPlanets(data) {
   // Your code goes here...
+  let planets = [];
+  for(let planet of data.planets) (!planet.moonsCount || planet.moonsCount < 10) && planets.push(planet.name);
+  return planets;
 }
 
 // === TEST YOURSELF ===

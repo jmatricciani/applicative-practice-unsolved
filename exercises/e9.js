@@ -6,6 +6,11 @@ import { data } from "../data/data";
 
 export function getEarthData(data) {
   // Your code goes here...
+  let earth;
+  for(let planet of data.planets){
+    (planet.name === "Earth") && (earth = planet);
+  }
+  return earth;
 }
 
 

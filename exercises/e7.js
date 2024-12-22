@@ -6,6 +6,11 @@ import { data } from "../data/data";
 
 export function getPlanetsNamesWithMoons(data) {
   // Your code goes here...
+  let planets = [];
+  for(let planet of data.planets){
+    if(planet.moonsCount) planets.push(planet.name);
+  }
+  return planets;
 }
 
 
