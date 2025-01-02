@@ -6,14 +6,11 @@ import { data } from "../data/data";
 
 export function getPlanetsWithMassValue(data, number) {
   // Your code goes here...
-  let planets = [];
-  for(let planet of data.planets){
-    if(planet.mass.massValue >= number) planets.push(planet.name);
-  }
-  return planets;
+  return data.planets.reduce((acc, planet) => {
+    if (planet.mass.massValue >= number) acc.push(planet.name);
+    return acc;
+  }, []);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-5"

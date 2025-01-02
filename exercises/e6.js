@@ -6,14 +6,11 @@ import { data } from "../data/data";
 
 export function getAsteroidsDiscoveredAfterYear(data, year) {
   // Your code goes here...
-  let asteroids = [];
-  for(let asteroid of data.asteroids){
-    if(asteroid.discoveryYear > year) asteroids.push(asteroid.name);
-  }
-  return asteroids;
+  return data.asteroids.reduce((acc, asteroid) => {
+    if (asteroid.discoveryYear > year) acc.push(asteroid.name);
+    return acc
+  }, []);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-6"

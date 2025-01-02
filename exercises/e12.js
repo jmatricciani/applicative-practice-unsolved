@@ -6,12 +6,11 @@ import { data } from "../data/data";
 
 export function allPlanetsMoonsCount(data) {
   // Your code goes here...
-  let moonSum = 0;
-  for(let planet of data.planets) (planet.moonsCount) && (moonSum += planet.moonsCount);
-  return moonSum;
+  return data.planets.reduce((moonSum, planet) => {
+    if (planet.moonsCount) moonSum += planet.moonsCount;
+    return moonSum;
+  }, 0);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-12"

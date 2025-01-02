@@ -6,10 +6,8 @@ import { data } from "../data/data";
 
 export function getAsteroidDataByName(data, asteroidName) {
   // Your code goes here...
-  for(let asteroid of data.asteroids) if(asteroid.name === asteroidName) return asteroid;  
+  return data.asteroids.find((asteroid) => asteroid.name === asteroidName);
 }
-
-
 
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-10"
